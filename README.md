@@ -31,7 +31,7 @@ This bash script will download the FASTQ files using the accession file (cell nu
 
 ---
 
-### `accession/`
+### `accession.txt`
 
 Used for downloading the files.
 
@@ -41,7 +41,7 @@ Used for downloading the files.
 
 There are 3 folders in this repository:
 
-- **Pipeline provided in Darmanis et al. paper**  
+- **Reproduction of pipeline provided in Darmanis et al. paper**  
   Contains all of the scripts for the re-analysis of the pipeline provided in supplementary information.
 
 - **Alternative pipeline**  
@@ -51,4 +51,4 @@ There are 3 folders in this repository:
   Includes the code for creating the website in the LAMP server.
 
 
-├── bash_for_downloading_files.sh # SLURM script to download FASTQ files ├── accession/ # Accession files for downloading data ├── darmanis_pipeline/ # Scripts based on Darmanis et al. paper ├── alternative_pipeline/ # Custom pipeline with tools post-2016 ├── website/ # Code for building the website (LAMP server) └── README.md # Project overview
+ ```├── bash_for_downloading_files.sh # SLURM script to download FASTQ files ├── accession/ # Accession files for downloading data ├── darmanis_pipeline/ # Scripts based on Darmanis et al. paper ├── alternative_pipeline/ # Custom pipeline with tools post-2016 ├── website/ # Code for building the website (LAMP server) └── README.md # Project overview ```
