@@ -50,8 +50,8 @@ There are 3 folders in this repository:
 - **Website**  
   Includes the code for creating the website in the LAMP server.
 
-
- ```│   accession.txt
+```
+│   accession.txt
 │   bash_for_downloading_files.sh
 │   README.md
 │
