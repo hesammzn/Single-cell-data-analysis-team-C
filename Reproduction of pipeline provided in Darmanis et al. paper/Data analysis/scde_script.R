@@ -1,6 +1,13 @@
 library(scde)
 library(Matrix)
+library(parallel)
+library(tsne)
+library(mclust)
+library(scatterplot3d)
+library(FactoMineR)
+library(dplyr)
 library(htmlwidgets)
+library(plotly)
 
 counts <- read.csv("/home/h/hm435/Desktop/Steered_project/Modified_GeneCountMatrix.csv", 
                    row.names = 1, header = TRUE)
@@ -9,6 +16,7 @@ counts <- as.matrix(counts)
 
 counts <- counts[rowSums(counts) >= 100, ]
 
+n.cores <- 1
 
 scde_model <- scde.error.models(counts = counts, 
                                 n.cores = 1,  
@@ -77,7 +85,6 @@ top_genes_df <- do.call(rbind, lapply(names(top_genes_by_cluster), function(clus
 write.csv(top_genes_df, "Top20_Genes_Per_Cluster_100.csv", row.names = FALSE)
 
 #3D interactive plot
-
 tsne_df <- data.frame(
   X = tsne_res[,1],
   Y = tsne_res[,2],
