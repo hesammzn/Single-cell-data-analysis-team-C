@@ -51,4 +51,48 @@ There are 3 folders in this repository:
   Includes the code for creating the website in the LAMP server.
 
 
- ```├── bash_for_downloading_files.sh # SLURM script to download FASTQ files ├── accession/ # Accession files for downloading data ├── darmanis_pipeline/ # Scripts based on Darmanis et al. paper ├── alternative_pipeline/ # Custom pipeline with tools post-2016 ├── website/ # Code for building the website (LAMP server) └── README.md # Project overview ```
+ ```│   accession.txt
+│   bash_for_downloading_files.sh
+│   README.md
+│
+├───Alternative Pipeline
+│   ├───Data analysis
+│   │       Alt_with_gene_names.csv
+│   │       Extracting_geneNames_and_geneIDs_from_annotation_file.sh
+│   │       geneID_to_geneName.R
+│   │       gene_id_gene_name.tsv
+│   │       Merging_gene_counts.R
+│   │       MHC_gene_expression.R
+│   │       README.md
+│   │       Seurat.R
+│   │       top_markers_per_cluster_ALT.csv
+│   │
+│   └───Processing fastq files
+│           accessions.txt
+│           fastp_bash.sh
+│           README.md
+│           salmon_index.sh
+│           salmon_map.sh
+│
+└───Reproduction of pipeline provided in Darmanis et al. paper
+    ├───Data analysis
+    │       Adding_gene_IDs.R
+    │       Extracting_geneNames_and_geneIDs_from_annotation_file.sh
+    │       geneID_to_geneName.R
+    │       gene_id_gene_name.tsv
+    │       Merging_gene_count_matrices.R
+    │       MHCI_expression.R
+    │       Modified_GeneCountMatrix.csv
+    │       README.md
+    │       SCDE_ErrorModels_100.rds
+    │       scde_script.R
+    │       SLURM_SCDE.sh
+    │       top20_genes_named.csv
+    │
+    └───Processing fastq files
+            index_star.sh
+            prinseq.sh
+            README.md
+            STAR_MAP.sh
+            trimgalore.sh
+ ```
