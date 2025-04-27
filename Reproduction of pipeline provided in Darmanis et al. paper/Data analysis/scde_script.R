@@ -6,8 +6,6 @@ library(mclust)
 library(scatterplot3d)
 library(FactoMineR)
 library(dplyr)
-library(htmlwidgets)
-library(plotly)
 
 counts <- read.csv("/home/h/hm435/Desktop/Steered_project/Modified_GeneCountMatrix.csv", 
                    row.names = 1, header = TRUE)
