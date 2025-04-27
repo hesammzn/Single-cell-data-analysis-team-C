@@ -37,7 +37,7 @@ matw <- 1 - sqrt(p.self.fail * sqrt(p.self.fail * p.mode.fail))
 mat <- log10(exp(jp$modes) + 1)
 
 #PCA with FactoMineR on transposed matrix
-expr_data <- t(mat)  # PCA expects samples (cells) in rows
+expr_data <- t(mat) 
 expr_data <- as.data.frame(expr_data)
 pca_res <- PCA(expr_data, scale.unit = TRUE, ncp = 30, graph = FALSE)
 pca_matrix <- pca_res$ind$coord
