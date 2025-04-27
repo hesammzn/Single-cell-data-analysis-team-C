@@ -83,29 +83,3 @@ top_genes_df <- do.call(rbind, lapply(names(top_genes_by_cluster), function(clus
 }))
 
 write.csv(top_genes_df, "Top20_Genes_Per_Cluster_100.csv", row.names = FALSE)
-
-#3D interactive plot
-tsne_df <- data.frame(
-  X = tsne_res[,1],
-  Y = tsne_res[,2],
-  Z = tsne_res[,3],
-  Cluster = as.factor(cluster_vec),
-  Cell = colnames(counts)
-)
-
-p <- plot_ly(tsne_df, 
-        x = ~X, y = ~Y, z = ~Z,
-        color = ~Cluster,
-        colors = rainbow(length(unique(cluster_vec))),
-        type = "scatter3d",
-        mode = "markers",
-        text = ~paste("Cell:", Cell, "<br>Cluster:", Cluster),
-        marker = list(size = 3)) %>%
-  layout(title = "3D t-SNE Clustering",
-         scene = list(
-           xaxis = list(title = "t-SNE 1"),
-           yaxis = list(title = "t-SNE 2"),
-           zaxis = list(title = "t-SNE 3")
-         ))
-
-saveWidget(p, "tsne_3d_plot.html", selfcontained = TRUE)
