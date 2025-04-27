@@ -1,4 +1,3 @@
-# Load libraries
 library(Seurat)
 library(ggplot2)
 library(Matrix)
