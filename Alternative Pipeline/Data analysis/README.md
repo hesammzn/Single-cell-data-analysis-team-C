@@ -14,9 +14,6 @@ The files in this folder were executed in this order:
 4. `Seurat.R`:  
    Script for dimension reduction, clustering and different plots with Seurat (version 5.2.1).
 
-5. `MHC_gene_expression.R`:  
-   Script for analysing the existence of MHC pathway in the dataset.
-
 ---
 
 ### Other Files in the Folder
