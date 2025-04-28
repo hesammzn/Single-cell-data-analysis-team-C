@@ -73,7 +73,7 @@ There are 3 folders in this repository:
 │           salmon_index.sh
 │           salmon_map.sh
 │
-├───Replication of pipeline provided in Darmanis et al. paper
+├───Replication of pipeline provided in Darmanis et al. (2015) paper
 │   ├───Data analysis
 │   │       Adding_gene_IDs.R
 │   │       Extracting_geneNames_and_geneIDs_from_annotation_file.sh
