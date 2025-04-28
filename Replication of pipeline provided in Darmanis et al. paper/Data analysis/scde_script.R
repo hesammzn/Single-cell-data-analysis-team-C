@@ -6,7 +6,6 @@ library(mclust)
 library(scatterplot3d)
 library(FactoMineR)
 library(dplyr)
-library(htmlwidgets)
 
 counts <- read.csv("/home/h/hm435/Desktop/Steered_project/R/Modified_GeneCountMatrix.csv", 
                    row.names = 1, header = TRUE)
@@ -30,7 +29,7 @@ matw <- 1 - sqrt(p.self.fail * sqrt(p.self.fail * p.mode.fail))
 mat <- log10(exp(jp$modes) + 1)
 
 #PCA with FactoMineR on transposed matrix
-expr_data <- t(mat)  # PCA expects samples (cells) in rows
+expr_data <- t(mat) 
 expr_data <- as.data.frame(expr_data)
 pca_res <- PCA(expr_data, scale.unit = TRUE, ncp = 30, graph = FALSE)
 pca_matrix <- pca_res$ind$coord
@@ -76,8 +75,5 @@ top_genes_df <- do.call(rbind, lapply(names(top_genes_by_cluster), function(clus
   )
 }))
 
-write.csv(top_genes_df, "Top20_Genes_Per_Cluster_FactoPCA.csv", row.names = FALSE)
 
-
-
-
+write.csv(top_genes_df, "Top20_Genes_Per_Cluster_100.csv", row.names = FALSE)

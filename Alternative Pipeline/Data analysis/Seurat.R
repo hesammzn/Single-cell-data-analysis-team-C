@@ -142,8 +142,6 @@ scatterplot3d(
   zlab = "UMAP 3"
 )
 
-
-
 #Analyzing MHC pathway type I in different cells.
 mhci_genes <- c("HLA-A", "HLA-B", "HLA-C", "B2M", "TAPBP", "CALR", "ERAP1", "HSPA5", 
                 "PDIA3", "TAP2", "SEC61A1", "SEC61A2", "SEC61B", "SEC61G")
@@ -167,10 +165,6 @@ ggplot(mhci_melted, aes(x = Gene, y = AverageExpression, fill = CellType)) +
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.text = element_text(size = 6)
   ) + scale_fill_brewer(palette = "Set3")
-
-
-
-
 
 
 cluster_ids <- c(
@@ -203,7 +197,8 @@ names(celltype_with_counts_vector) <- colnames(seurat_obj)
 seurat_obj <- AddMetaData(seurat_obj, metadata = celltype_with_counts_vector, col.name = "celltype_with_counts")
 
 
-#Creating figure with clusters
+
+#Creating figure with clusters for adult and fetal cells
 DimPlot(seurat_obj, reduction = "umap", group.by = "celltype_with_counts", label = TRUE, repel = TRUE, pt.size = 1, label.size = 3) +
   ggtitle("Clusters with number of cells") +
   theme(
@@ -213,12 +208,6 @@ DimPlot(seurat_obj, reduction = "umap", group.by = "celltype_with_counts", label
   ) +
   theme(legend.position = "right") +
   labs(x = "UMAP_1", y = "UMAP_2")
-
-
-
-
-
-
 
 
 
@@ -263,4 +252,3 @@ VlnPlot(seurat_obj,
     axis.text.x = element_text(angle = 45, hjust = 1),
     axis.text.y = element_text(size = 10),
     legend.text = element_text(size = 10)
-  )
