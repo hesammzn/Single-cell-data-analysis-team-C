@@ -13,7 +13,6 @@ while read acc; do
     out2="${acc}_2_trimmed.fastq"
     html_report="${acc}_report.html"
 
-    # Run fastp with Nextera trimming and improved matching to prinseq
     fastp -i "$read1" -I "$read2" \
       -o "$out1" -O "$out2" \
       --adapter_sequence CTGTCTCTTATACACATCT \
