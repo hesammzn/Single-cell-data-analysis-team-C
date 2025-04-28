@@ -7,20 +7,14 @@ library(scatterplot3d)
 library(FactoMineR)
 library(dplyr)
 
-counts <- read.csv("/home/h/hm435/Desktop/Steered_project/Modified_GeneCountMatrix.csv", 
+counts <- read.csv("/home/h/hm435/Desktop/Steered_project/R/Modified_GeneCountMatrix.csv", 
                    row.names = 1, header = TRUE)
-
+n.cores <- 1
 counts <- as.matrix(counts)
-
 counts <- counts[rowSums(counts) >= 100, ]
 
-n.cores <- 1
+scde.fitted.model <- readRDS("/home/h/hm435/Desktop/Steered_project/R/second_error_with100/SCDE_ErrorModels.rds")
 
-scde_model <- scde.error.models(counts = counts, 
-                                n.cores = 1,  
-                                save.model.plots = FALSE, 
-                                verbose = 1)
-scde.fitted.model <- scde_model 
 scde.prior <- scde.expression.prior(models = scde.fitted.model, counts = counts)
 
 jp <- scde.posteriors(models = scde.fitted.model, counts, scde.prior, 
@@ -30,7 +24,7 @@ jp$jp.modes <- log(as.numeric(colnames(jp$jp)))[max.col(jp$jp)]
 p.mode.fail <- scde.failure.probability(models = scde.fitted.model, magnitudes = jp$jp.modes)
 p.self.fail <- scde.failure.probability(models = scde.fitted.model, counts = counts)
 
-#Weight and magnitude matrices
+# Weight and magnitude matrices
 matw <- 1 - sqrt(p.self.fail * sqrt(p.self.fail * p.mode.fail))
 mat <- log10(exp(jp$modes) + 1)
 
@@ -40,6 +34,7 @@ expr_data <- as.data.frame(expr_data)
 pca_res <- PCA(expr_data, scale.unit = TRUE, ncp = 30, graph = FALSE)
 pca_matrix <- pca_res$ind$coord
 
+#t-SNE on top PCs
 tsne_res <- tsne(pca_matrix, k = 3)
 
 #GMM clustering
@@ -55,12 +50,12 @@ scatterplot3d(tsne_res[,1], tsne_res[,2], tsne_res[,3],
               xlim = c(-60, 60), ylim = c(-60, 60), zlim = c(-60, 60),
               main = "Clusters obtained with pipeline in paper")
 
-#Converting to vector
+# Convert to vector
 clusters <- as.matrix(clusters)
 cluster_vec <- as.vector(clusters)
 names(cluster_vec) <- colnames(counts)
 
-#Top 20 genes per cluster
+# Get top 20 genes per cluster
 top_genes_by_cluster <- list()
 
 for (cl in sort(unique(cluster_vec))) {
@@ -79,5 +74,6 @@ top_genes_df <- do.call(rbind, lapply(names(top_genes_by_cluster), function(clus
     AvgExpression = as.numeric(top_genes_by_cluster[[cluster_name]])
   )
 }))
+
 
 write.csv(top_genes_df, "Top20_Genes_Per_Cluster_100.csv", row.names = FALSE)
