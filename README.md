@@ -20,7 +20,7 @@
 ### Project Overview
 
 This repository contains scripts and tools used for single-cell RNA-seq data analysis using two pipelines:
-- One based on **Darmanis et al.**
+- One based on **Darmanis et al. (2015)**
 - Another using **tools published after 2016**
 
 ---
