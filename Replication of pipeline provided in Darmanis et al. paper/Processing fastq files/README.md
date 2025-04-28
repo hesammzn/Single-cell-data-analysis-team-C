@@ -8,7 +8,7 @@ This script is for trimming the fastq files using prinseq with processing 6 file
 
 ---
 
-### `trimgalore.sh`
+### `Trim Galore.sh`
 
 This script is for removing the nextera adapters from sequences. Trim Galore perl file (0.6.10) is needed to run this script.
 
