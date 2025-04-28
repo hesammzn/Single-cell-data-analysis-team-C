@@ -165,14 +165,28 @@ ui <- page_navbar(
                   ),
                   actionButton(
                     "go_contact", 
-                    div(style = "font-weight: bold;", "Contact"), #will link to contacts page
+                    div(style = "font-weight: bold;", "Contact"),
                     class = "big-card btn btn-purple"
                   )
+                ),
+#This will link to github page
+                tags$div(
+                  style = "width: 100%; text-align: center; margin-top: 30px;",
+                  tags$span(
+                    style = "font-size: 1.2rem; color: white;",
+                    "GitHub page for the scripts that resulted in figures in this website: "
+                  ),
+                  tags$a(
+                    href = "https://github.com/hesammzn/Single-cell-data-analysis-team-C",
+                    target = "_blank",
+                    style = "color: #00AEEF; font-size: 1.2rem; text-decoration: underline;",
+                    "https://github.com/hesammzn/Single-cell-data-analysis-team-C"
+                  )
+                ),
                 )
               )  
-            )
-  ),
-  
+            ),
+
 #Creates another page for the Original analysis  
   nav_panel("Original Analysis",
             card("Re-implementation of pipeline provided in Darmanis et al. (2015):",
