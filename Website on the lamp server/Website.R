@@ -110,16 +110,16 @@ ui <- page_navbar(
       }
     "))
   ),
-  
-  ###Home page###
-  #Creates a seperate page for Home and decides its dimensions
+
+###Home page###
+#Creates a seperate page for Home and decides its dimensions
   nav_panel("Home",
             tags$div(
               class = "d-flex flex-column align-items-center justify-content-center",
               style = "min-height: 80vh;",
               tags$main(
                 class = "px-3 text-center",
-                #Creates a headline and decides its gap to the next section of the page. Also customises the colour of the font.                
+#Creates a headline and decides its gap to the next section of the page. Also customises the colour of the font.                
                 tags$h1(
                   style = "margin-bottom: 80px;", 
                   "Re-implementation of single-cell RNA-seq pipeline in ",
@@ -131,7 +131,7 @@ ui <- page_navbar(
                   ),
                   " paper as well as using a newer alternative pipeline published after 2016"
                 ),
-                #Creates a paragraph with more of the same customisations                  
+#Creates a paragraph with more of the same customisations                  
                 tags$p(
                   class = "lead",
                   "In this website, we show our findings for analysis on the single-cell RNA-sequencing data from the Darmanis et al. (2015) paper using two pipelines:"
@@ -150,7 +150,7 @@ ui <- page_navbar(
                 ),
                 
                 tags$p(class = "lead", "Use the buttons below to explore the different sections."),
-                #Creates action buttons which if clicked on will link to the mentioned page.                 
+#Creates action buttons which if clicked on will link to the mentioned page.                 
                 tags$div(
                   class = "d-flex justify-content-center flex-wrap",
                   actionButton(
@@ -173,12 +173,12 @@ ui <- page_navbar(
             )
   ),
   
-  #Creates another page for the Original analysis  
+#Creates another page for the Original analysis  
   nav_panel("Original Analysis",
             card("Re-implementation of pipeline provided in Darmanis et al. (2015):",
                  
                  tags$h4("Methods and Materials"), #header for methods
-                 #Creates a list of sentences for the methods section, that will each be on a separate line. Many of these are linked with a site that references the tool that was used for that part of the analysis.                  
+#Creates a list of sentences for the methods section, that will each be on a separate line. Many of these are linked with a site that references the tool that was used for that part of the analysis.                  
                  tags$ul(
                    tags$li(HTML('Downloading FASTQ files using <a href="https://github.com/ncbi/sra-tools" target="_blank" style="color:#00AEEF;">SRA toolkit</a> (v.3.0.0)')),
                    tags$li(HTML('Trimming sequences with <a href="https://prinseq.sourceforge.net/" target="_blank" style="color:#00AEEF;">Prinseq</a> (v.0.20.4)')),
@@ -195,7 +195,7 @@ ui <- page_navbar(
                  tags$div(
                    style = "margin-top: 40px; ", #gap to the above section
                    tags$h4("Challenges"), #header for challenges
-                   #Creates list of Challenges from this section of the analysis. 
+#Creates list of Challenges from this section of the analysis. 
                    tags$ul(
                      tags$li("No version was mentioned for any of the tools and packages, which can bias the results during re-implementation."),
                      tags$li("The scde package was not running initially, and we had to downgrade some libraries to make scde work."),
@@ -208,7 +208,7 @@ ui <- page_navbar(
                    )
                  ),
                  
-                 
+               
                  tags$div(
                    style = "margin-top: 40px;",
                    tags$h4("Results"), #header 
@@ -248,11 +248,11 @@ ui <- page_navbar(
                  )
             )
   ),
-  ###Alternative analysis section###  
+###Alternative analysis section###  
   nav_panel("Alternative Analysis",
             card("Modern Clustering Pipeline",
                  
-                 #Method section of Alternative analysis
+#Method section of Alternative analysis
                  tags$div(
                    tags$h4("Methods and Materials"),
                    tags$ul(
@@ -268,7 +268,7 @@ ui <- page_navbar(
                      tags$li("Analyzing MHC-I gene expression")
                    )
                  ),
-                 #Challenges of this section
+#Challenges of this section
                  tags$div(
                    style = "margin-top: 40px; ",
                    tags$h4("Challenges"),
@@ -278,8 +278,8 @@ ui <- page_navbar(
                      tags$li("Addressing the duplication in gene names (multiple rows with the same gene name) after loading the gene count matrix"),
                    )
                  ),
-                 
-                 #Results of this section
+
+#Results of this section
                  tags$div(
                    style = "margin-top: 40px; ",
                    tags$h4("Results"),
@@ -338,7 +338,7 @@ ui <- page_navbar(
                                  "Figure 6. S and G2M scores for different clusters. Higher scores indicate that cells in that cluster are more likely to be in replication stage.")
                  ),
                  
-                 
+
                  tags$div(style = "margin-top: 40px; text-align: center;",
                           tags$img(src = "V.jpg", style = "max-width: 70%; border-radius: 15px;"),
                           tags$p(style = "color: #AAAAAA; margin-top: 10px; font-size: 0.9em; font-style: italic;",
@@ -358,7 +358,7 @@ ui <- page_navbar(
                           tags$p(style = "color: #AAAAAA; margin-top: 10px; font-size: 0.9em; font-style: italic;",
                                  "Figure 8. Difference between the number of adult and fetal cells obtained from alternative pipeline.")
                  ),
-                 tags$div(style = "margin-top: 40px; text-align: center;",
+                tags$div(style = "margin-top: 40px; text-align: center;",
                           tags$img(src = "11111.jpg", style = "max-width: 70%; border-radius: 15px;"),
                           tags$p(style = "color: #AAAAAA; margin-top: 10px; font-size: 0.9em; font-style: italic;",
                                  "Figure 9. Expression of different genes involved with MHCI across different cells in the dataset analyzed with alternative tools.")
@@ -367,7 +367,7 @@ ui <- page_navbar(
                  
             )
   ),
-  #Creates new panel for Contact page  
+#Creates new panel for Contact page  
   nav_panel("Contact",
             card("Meet the Team",
                  tags$ul(
@@ -383,7 +383,7 @@ ui <- page_navbar(
 
 ### SERVER section####
 server <- function(input, output, session) {
-  #Logic for the navigation buttons  
+#Logic for the navigation buttons  
   observeEvent(input$go_original, {
     updateNavbarPage(session, inputId = "navbar", selected = "Original Analysis")
   })
@@ -395,8 +395,8 @@ server <- function(input, output, session) {
   observeEvent(input$go_contact, {
     updateNavbarPage(session, inputId = "navbar", selected = "Contact")
   })
-  
-  #Renders the first table and adds features such as a search bar and highlights 
+
+#Renders the first table and adds features such as a search bar and highlights 
   output$number_cells_table <- renderDataTable({
     datatable(
       number_cells,
@@ -413,7 +413,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #Renders the second table 
+#Renders the second table 
   output$top20_old_table <- renderDataTable({
     datatable(
       top20_old,
@@ -430,7 +430,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #Renders the first plot 
+#Renders the first plot 
   output$tsne3d <- renderPlot({
     req(input$xcol, input$ycol, input$zcol, input$color_by)
     cluster_levels <- sort(unique(tsne_data[[input$color_by]]))
@@ -453,8 +453,8 @@ server <- function(input, output, session) {
     legend("topright", legend = paste("Cluster", cluster_levels),
            col = colors_palette, pch = 20, cex = 1.5, text.col = "black", box.lwd = 0)
   })
-  
-  #Renders third table  
+
+#Renders third table  
   output$top_markers_alt_table <- renderDataTable({
     datatable(
       top_markers_alt,
@@ -471,7 +471,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #Renders second plot  
+#Renders second plot  
   output$scatterplot3d_alt <- renderPlot({
     scatterplot3d(
       x = scatterplot_data$UMAP_1,
@@ -486,8 +486,8 @@ server <- function(input, output, session) {
       angle = input$angle_alt
     )
   })
-  
-  #Renders fourth table  
+
+#Renders fourth table  
   output$last_table <- renderDataTable({
     datatable(
       last_table,
