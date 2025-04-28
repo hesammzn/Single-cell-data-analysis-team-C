@@ -41,7 +41,7 @@ Used for downloading the files.
 
 There are 3 folders in this repository:
 
-- **Reproduction of pipeline provided in Darmanis et al. paper**  
+- **Replication of pipeline provided in Darmanis et al. paper**  
   Contains all of the scripts for the re-analysis of the pipeline provided in supplementary information.
 
 - **Alternative pipeline**  
