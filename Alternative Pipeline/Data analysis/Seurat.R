@@ -167,7 +167,6 @@ ggplot(mhci_melted, aes(x = Gene, y = AverageExpression, fill = CellType)) +
   ) + scale_fill_brewer(palette = "Set3")
 
 
-
 cluster_ids <- c(
   "0" = "Fetal_Quiescent\nnewly born neurons",
   "1" = "Adult cells",
@@ -198,6 +197,7 @@ names(celltype_with_counts_vector) <- colnames(seurat_obj)
 seurat_obj <- AddMetaData(seurat_obj, metadata = celltype_with_counts_vector, col.name = "celltype_with_counts")
 
 
+
 #Creating figure with clusters for adult and fetal cells
 DimPlot(seurat_obj, reduction = "umap", group.by = "celltype_with_counts", label = TRUE, repel = TRUE, pt.size = 1, label.size = 3) +
   ggtitle("Clusters with number of cells") +
@@ -208,6 +208,7 @@ DimPlot(seurat_obj, reduction = "umap", group.by = "celltype_with_counts", label
   ) +
   theme(legend.position = "right") +
   labs(x = "UMAP_1", y = "UMAP_2")
+
 
 
 #Validating manual annotation with PanglaoDB
@@ -251,4 +252,3 @@ VlnPlot(seurat_obj,
     axis.text.x = element_text(angle = 45, hjust = 1),
     axis.text.y = element_text(size = 10),
     legend.text = element_text(size = 10)
-  )
