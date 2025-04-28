@@ -92,7 +92,7 @@ There are 3 folders in this repository:
 │           prinseq.sh
 │           README.md
 │           STAR_MAP.sh
-│           trimgalore.sh
+│           Trim_Galore.sh
 │
 └───Website on the lamp server
         Website.R
