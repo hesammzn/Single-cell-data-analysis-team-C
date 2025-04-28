@@ -62,7 +62,6 @@ There are 3 folders in this repository:
 │   │       geneID_to_geneName.R
 │   │       gene_id_gene_name.tsv
 │   │       Merging_gene_counts.R
-│   │       MHC_gene_expression.R
 │   │       README.md
 │   │       Seurat.R
 │   │       top_markers_per_cluster_ALT.csv
@@ -74,25 +73,27 @@ There are 3 folders in this repository:
 │           salmon_index.sh
 │           salmon_map.sh
 │
-└───Reproduction of pipeline provided in Darmanis et al. paper
-    ├───Data analysis
-    │       Adding_gene_IDs.R
-    │       Extracting_geneNames_and_geneIDs_from_annotation_file.sh
-    │       geneID_to_geneName.R
-    │       gene_id_gene_name.tsv
-    │       Merging_gene_count_matrices.R
-    │       MHCI_expression.R
-    │       Modified_GeneCountMatrix.csv
-    │       README.md
-    │       SCDE_ErrorModels_100.rds
-    │       scde_script.R
-    │       SLURM_SCDE.sh
-    │       top20_genes_named.csv
-    │
-    └───Processing fastq files
-            index_star.sh
-            prinseq.sh
-            README.md
-            STAR_MAP.sh
-            trimgalore.sh
+├───Replication of pipeline provided in Darmanis et al. paper
+│   ├───Data analysis
+│   │       Adding_gene_IDs.R
+│   │       Extracting_geneNames_and_geneIDs_from_annotation_file.sh
+│   │       geneID_to_geneName.R
+│   │       gene_id_gene_name.tsv
+│   │       Merging_gene_count_matrices.R
+│   │       Modified_GeneCountMatrix.csv
+│   │       README.md
+│   │       SCDE_ErrorModels_100.rds
+│   │       scde_script.R
+│   │       SLURM_SCDE.sh
+│   │       top20_genes_named.csv
+│   │
+│   └───Processing fastq files
+│           index_star.sh
+│           prinseq.sh
+│           README.md
+│           STAR_MAP.sh
+│           trimgalore.sh
+│
+└───Website on the lamp server
+        Website.R
  ```
