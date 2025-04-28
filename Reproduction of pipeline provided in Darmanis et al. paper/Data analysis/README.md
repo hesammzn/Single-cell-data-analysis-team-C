@@ -12,8 +12,6 @@ The scripts in this folder were executed in this order:
 
 5. `geneID_to_geneName.R`: Since we had gene IDs instead of gene names, we used this script to change the IDs to names.
 
-6. `MHCI_expression.R`: This script was used to create barplots to check MHCI pathway existence in the dataset.
-
 ---
 
 ### Other Files in the Folder
