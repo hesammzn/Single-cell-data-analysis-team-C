@@ -124,7 +124,7 @@ ui <- page_navbar(
                   style = "margin-bottom: 80px;", 
                   "Re-implementation of single-cell RNA-seq pipeline in ",
                   tags$a(
-                    href = "https://www.pnas.org/doi/full/10.1073/pnas.1507125112", #a link to the research paper
+                    href = "https://www.pnas.org/doi/full/10.1073/pnas.1507125112",
                     target = "_blank",
                     style = "color: #00AEEF; text-decoration: underline;",
                     "Darmanis et al. (2015)"
@@ -155,12 +155,12 @@ ui <- page_navbar(
                   class = "d-flex justify-content-center flex-wrap",
                   actionButton(
                     "go_original", 
-                    div(style = "font-weight: bold;", "Original Analysis"), #will link to the original analysis page
+                    div(style = "font-weight: bold;", "Original Analysis"), #links to the original analysis page
                     class = "big-card btn btn-primary"
                   ),
                   actionButton(
                     "go_alternative", 
-                    div(style = "font-weight: bold;", "Alternative Analysis"), #will link to alternative analysis page
+                    div(style = "font-weight: bold;", "Alternative Analysis"), #links to alternative analysis page
                     class = "big-card btn btn-danger"
                   ),
                   actionButton(
@@ -225,7 +225,7 @@ ui <- page_navbar(
                
                  tags$div(
                    style = "margin-top: 40px;",
-                   tags$h4("Results"), #header 
+                   tags$h4("Results"), 
                    tags$p(
                      "We could not identify clusters since there were many similar genes among the top 20 expressed genes in various clusters. Possible reasons are mentioned above. Other findings of the paper could not be reproduced either due to biased and wrong results from data analysis."
                    )
