@@ -4,7 +4,6 @@
 
 
 for acc in $(cat accessions.txt); do
-    # Define input file names
     read1="${acc}_cleaned_1.fastq"
     read2="${acc}_cleaned_2.fastq"
     
