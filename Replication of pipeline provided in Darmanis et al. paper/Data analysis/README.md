@@ -25,3 +25,5 @@ The scripts in this folder were executed in this order:
 - `top20_genes_names.csv`: Top 20 genes expressed in different clusters with the gene names instead of IDs.
 
 - `gene_id_gene_name.tsv`: All gene IDs together with gene names obtained from hg19 GTF annotation file.
+  
+- `Gene_Count_matrix_all_genes_100_with_names`: Cells with their full gene counts with gene names instead of IDs.
