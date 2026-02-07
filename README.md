@@ -1,6 +1,7 @@
 ### Team C
 
 - **Hesam Moazzen**  
+  `hm483@leicester.ac.uk`
   `hm435@student.le.ac.uk`
 
 - **Abirajh Arulrajah**  
