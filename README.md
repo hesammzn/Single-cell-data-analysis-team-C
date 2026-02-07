@@ -6,15 +6,6 @@
 - **Abirajh Arulrajah**  
   `aa1152@student.le.ac.uk`
 
-- **Sanskriti Sanskriti**  
-  `s82@student.le.ac.uk`
-
-- **Priyadarshini Venkataramesh**  
-  `pv97@student.le.ac.uk`
-
-- **Alice Haskell**  
-  `aeh35@student.le.ac.uk`
-
 ---
 
 ### Project Overview
