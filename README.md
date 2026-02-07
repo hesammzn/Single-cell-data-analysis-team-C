@@ -6,6 +6,8 @@
 - **Abirajh Arulrajah**  
   `aa1152@student.le.ac.uk`
 
+- **Rajapl Hunjan**  
+  `Rajpal.Hunjan@hotmail.com`
 ---
 
 ### Project Overview
