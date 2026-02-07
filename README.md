@@ -6,7 +6,7 @@
 - **Abirajh Arulrajah**  
   `aa1152@student.le.ac.uk`
 
-- **Rajapl Hunjan**  
+- **Rajpal Hunjan**  
   `Rajpal.Hunjan@hotmail.com`
 ---
 
