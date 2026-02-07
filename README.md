@@ -2,7 +2,6 @@
 
 - **Hesam Moazzen**  
   `hm483@leicester.ac.uk`
-  `hm435@student.le.ac.uk`
 
 - **Abirajh Arulrajah**  
   `aa1152@student.le.ac.uk`
