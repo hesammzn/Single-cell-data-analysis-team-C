@@ -4,7 +4,7 @@
   `hm483@leicester.ac.uk`
 
 - **Abirajh Arulrajah**  
-  `aa1152@student.le.ac.uk`
+  `abirajh21@outlook.com`
 
 - **Rajpal Hunjan**  
   `Rajpal.Hunjan@hotmail.com`
